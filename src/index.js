@@ -1,16 +1,25 @@
 
 exports.min = function min (array) {
-  return (array.length === 0 || array === undefined) ? 0 : array.sort((a,b) => a - b)[0];
+  if (array.length === 0 || array === undefined){
+    return 0;
+  }
+  return array.sort((a,b) => a - b)[0];
 }
 
 exports.max = function max (array) {
-  return (array.length === 0 || array === undefined) ? 0 : array.sort((a,b) => a - b)[array.length - 1];
+  if (array.length === 0 || array === undefined){
+    return 0;
+  }
+  return array.sort((a,b) => a - b)[array.length - 1];
 }
 
 exports.avg = function avg (array) {
+  if (array.length === 0 || array === undefined){
+    return 0;
+  }
   let count = 0;
     for(let i = 0; i < array.length; i++){
       count += array[i];
     }
-return (array.length === 0 || array === undefined) ? 0 : count / (array.length);
+  return count / (array.length);
 }
