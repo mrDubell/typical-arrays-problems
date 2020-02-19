@@ -1,10 +1,10 @@
 
 exports.min = function min (array) {
-  return array.sort((a,b) => a - b)[0];
+  return (array == []) ? 0 : array.sort((a,b) => a - b)[0];
 }
 
 exports.max = function max (array) {
-  return array.sort((a,b) => a - b)[array.length - 1];
+  return (array == []) ? 0 : array.sort((a,b) => a - b)[array.length - 1];
 }
 
 exports.avg = function avg (array) {
@@ -12,5 +12,5 @@ exports.avg = function avg (array) {
     for(let i = 0; i < array.length; i++){
       count += array[i];
     }
-return count / (array.length);
+return (array == []) ? 0 : count / (array.length);
 }
